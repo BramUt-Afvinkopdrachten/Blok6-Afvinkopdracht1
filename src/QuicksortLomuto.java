@@ -2,20 +2,24 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
+
 public class QuicksortLomuto {
 
     public static void main(String[] args) {
-        int n = 100;
+        int n = 1_000_000;
 
-        ArrayList<Integer> list = new ArrayList<Integer>();
+        ArrayList<Integer> list = new ArrayList<>();
         Random rd = new Random();
 
         for (int i = 0; i < n; i++) {
             list.add(rd.nextInt());
         }
         System.out.println(list.toString());
+        long startTime = System.currentTimeMillis();
         quicksort(list, 0, list.size() - 1);
         System.out.println(list.toString());
+        long endTime = System.currentTimeMillis();
+        System.out.println(endTime-startTime + " milliseconds");
     }
 
 
