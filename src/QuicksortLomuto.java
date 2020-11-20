@@ -4,24 +4,24 @@ import java.util.Random;
 
 
 public class QuicksortLomuto {
+    int n;
+    long time;
 
-    public static void main(String[] args) {
-        int n = 1_000_000;
-
+    public QuicksortLomuto(int n) {
+        this.n = n;
         ArrayList<Integer> list = new ArrayList<>();
         Random rd = new Random();
 
         for (int i = 0; i < n; i++) {
             list.add(rd.nextInt());
         }
-        System.out.println(list.toString());
         long startTime = System.currentTimeMillis();
         quicksort(list, 0, list.size() - 1);
-        System.out.println(list.toString());
         long endTime = System.currentTimeMillis();
-        System.out.println(endTime-startTime + " milliseconds");
-    }
+        time = endTime-startTime;
+        System.out.println(this.n + " items in " + time + " milliseconds");
 
+    }
 
     public static void quicksort(ArrayList<Integer> list, int low, int high){
         if (low < high) {
@@ -42,5 +42,13 @@ public class QuicksortLomuto {
         }
         Collections.swap(list, i, high);
         return i;
+    }
+
+    public long getTime() {
+        return time;
+    }
+
+    public int getN() {
+        return n;
     }
 }
