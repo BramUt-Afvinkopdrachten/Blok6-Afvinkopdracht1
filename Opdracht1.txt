@@ -5,6 +5,6 @@ d. O(2n)
 e. O(2n)
 f. O(n)
 g. O(log(n))
-h.
+h. O(n!)
 i. O(n)
 
