@@ -8,17 +8,18 @@ public class QuicksortLomuto {
     long time;
 
     public QuicksortLomuto(int n) {
+        long startTime;
         this.n = n;
+
         ArrayList<Integer> list = new ArrayList<>();
         Random rd = new Random();
 
         for (int i = 0; i < n; i++) {
             list.add(rd.nextInt());
         }
-        long startTime = System.currentTimeMillis();
+        startTime = System.currentTimeMillis();
         quicksort(list, 0, list.size() - 1);
-        long endTime = System.currentTimeMillis();
-        time = endTime-startTime;
+        time = System.currentTimeMillis() - startTime;
         System.out.println(this.n + " items in " + time + " milliseconds");
 
     }
